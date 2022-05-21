@@ -1,55 +1,48 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import CreateTodo from "./components/CreateTodo";
 import Header from "./components/Header";
 import Todos from "./components/Todos";
 
 const App = () => {
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState([
+        {
+            id: "iddad95f396428e",
+            isCompleted: true,
+            todo: "complete online javascript course",
+            order: "2022-05-21T19:39:05.479Z",
+        },
+        {
+            id: "id99ab11c546497",
+            isCompleted: false,
+            todo: "jog around the park 3x",
+            order: "2022-05-21T19:35:08.577Z",
+        },
+        {
+            id: "idd9150e2f9f5f6",
+            isCompleted: false,
+            todo: "10 minutes meditation",
+            order: "2022-05-21T19:35:15.717Z",
+        },
+        {
+            id: "id94c875a8ec945",
+            isCompleted: false,
+            todo: "read for 1 hour",
+            order: "2022-05-21T19:35:22.299Z",
+        },
+        {
+            id: "ide1ae2558e6f02",
+            isCompleted: false,
+            todo: "pick up groceries",
+            order: "2022-05-21T19:35:27.155Z",
+        },
+        {
+            id: "id686b023a1ad08",
+            isCompleted: false,
+            todo: "complete todo app on frontend mentor",
+            order: "2022-05-21T19:35:36.978Z",
+        },
+    ]);
     const [mode, setMode] = useState("all");
-
-    useEffect(() => {
-        window.localStorage.setItem(
-            "todos",
-            JSON.stringify([
-                {
-                    id: "iddad95f396428e",
-                    isCompleted: true,
-                    todo: "complete online javascript course",
-                    order: "2022-05-21T19:39:05.479Z",
-                },
-                {
-                    id: "id99ab11c546497",
-                    isCompleted: false,
-                    todo: "jog around the park 3x",
-                    order: "2022-05-21T19:35:08.577Z",
-                },
-                {
-                    id: "idd9150e2f9f5f6",
-                    isCompleted: false,
-                    todo: "10 minutes meditation",
-                    order: "2022-05-21T19:35:15.717Z",
-                },
-                {
-                    id: "id94c875a8ec945",
-                    isCompleted: false,
-                    todo: "read for 1 hour",
-                    order: "2022-05-21T19:35:22.299Z",
-                },
-                {
-                    id: "ide1ae2558e6f02",
-                    isCompleted: false,
-                    todo: "pick up groceries",
-                    order: "2022-05-21T19:35:27.155Z",
-                },
-                {
-                    id: "id686b023a1ad08",
-                    isCompleted: false,
-                    todo: "complete todo app on frontend mentor",
-                    order: "2022-05-21T19:35:36.978Z",
-                },
-            ])
-        );
-    }, []);
 
     useEffect(() => {
         if (mode === "all") {
